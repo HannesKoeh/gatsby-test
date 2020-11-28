@@ -34,6 +34,6 @@ curl -H "Authorization: token {PAT}" \
     https://api.github.com/repos/hanneskoeh/gatsby-test/dispatches
 ```
 
->note:the event_type value is the name previously defined
+>note:the event_type value is the name previously defined under [trigger/types](#add-trigger)
 
 see [here](https://blog.s1h.org/github-actions-webhook/)
