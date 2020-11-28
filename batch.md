@@ -2,11 +2,21 @@
 
 ## modify CI pipeline
 
+### add trigger
+
 ```yaml
 on:
   repository_dispatch:
     types: 
       - webhook-one
+```
+
+### add event to condition
+
+```yaml
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed') || ${{ github.event.action == 'webhook-one' }}
 ```
 
 ## create PAT
