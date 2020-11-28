@@ -4,6 +4,8 @@
 
 ### add trigger
 
+add a [**repository_dispatch**](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows#external-events-repository_dispatch)  event to trigger the flow.
+
 ```yaml
 on:
   repository_dispatch:
@@ -31,3 +33,7 @@ curl -H "Authorization: token {PAT}" \
     --data '{"event_type": "webhook-one"}' \
     https://api.github.com/repos/hanneskoeh/gatsby-test/dispatches
 ```
+
+>note:the event_type value is the name previously defined
+
+see [here](https://blog.s1h.org/github-actions-webhook/)
