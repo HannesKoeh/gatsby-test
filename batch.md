@@ -37,3 +37,7 @@ curl -H "Authorization: token {PAT}" \
 >note:the event_type value is the name previously defined under [trigger/types](#add-trigger)
 
 see [here](https://blog.s1h.org/github-actions-webhook/)
+
+## Useful links
+
+- [SWA Build and deploy]( https://aka.ms/swaworkflowconfig)
