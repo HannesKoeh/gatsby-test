@@ -1,10 +1,22 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: `An example to learn how to source data from WordPress`,
+    description: `Sourcing data from WordPress`,
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        /*
+         * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
+         * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'
+         */
+        baseUrl: `backend.esc-geretsried.de`, //demo.wp-api.org
+        protocol: `https`,
+        hostingWPCOM: false,
+        useACF: false,
+      },
+    },
+  ],
 }
+

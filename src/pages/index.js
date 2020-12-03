@@ -1,5 +1,56 @@
-import React from "react"
+import React, { Component } from "react"
+import { Link, graphql } from "gatsby"
 
-export default function Home() {
-  return <div><p>Hello Azure-World from Gatsby and GitHub! workflows</p><p><img src="https://github.com/HannesKoeh/gatsby-test/workflows/Azure%20Static%20Web%20Apps%20CI/CD/badge.svg?branch=main"/></p></div>
+class Homepage extends Component {
+  render() {
+    const data = this.props.data
+
+    return (
+      <>
+        {/* <div>
+          <h1>Pages</h1>
+          {data.allWordpressPage.edges.map(({ node }) => (
+            <div key={node.slug}>
+              <Link to={node.slug}>
+                <h2>{node.title}</h2>
+              </Link>
+              <h3>{node.excerpt}</h3>
+            </div>
+          ))}
+        </div> */}
+
+        <h1>Posts</h1>
+        {data.allWordpressPost.edges.map(({ node }) => (
+          <div key={node.slug}>
+            <Link to={node.slug}>
+              <h2>{node.title}</h2>
+            </Link>
+            <div>{node.date}</div>
+            <div><span dangerouslySetInnerHTML={{__html: node.excerpt}} /></div>
+            <div>{node.categories.map(({ n }) => (
+              <div>cat</div>
+            ))}</div>
+          </div>
+        ))}
+      </>
+    )
+  }
 }
+
+export default Homepage
+
+export const pageQuery = graphql`
+  query {
+    allWordpressPost {
+      edges {
+        node {
+          title
+          date
+          excerpt
+          slug
+          categories { id, name }
+        }
+      }
+    }
+  }
+`
