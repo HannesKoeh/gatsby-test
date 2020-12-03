@@ -23,10 +23,10 @@ class Homepage extends Component {
         {data.allWordpressPost.edges.map(({ node }) => (
           <div key={node.slug}>
             <Link to={node.slug}>
-              <h2>{node.title}</h2>
+              <h2><span dangerouslySetInnerHTML={{__html: node.title}} /></h2>
             </Link>
             <div>{node.date}</div>
-            <div>{node.author.name}</div>
+          
             <div>{node.categories.name}</div>
             <div><span dangerouslySetInnerHTML={{__html: node.excerpt}} /></div>
             
