@@ -14,7 +14,7 @@ module.exports = {
         baseUrl: `backend.esc-geretsried.de`, //demo.wp-api.org
         protocol: `https`,
         hostingWPCOM: false,
-        useACF: false,
+        useACF: true,
       },
     },
   ],

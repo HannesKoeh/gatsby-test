@@ -26,10 +26,13 @@ class Homepage extends Component {
               <h2>{node.title}</h2>
             </Link>
             <div>{node.date}</div>
+            <div>{node.author.name}</div>
+            <div>{node.categories.name}</div>
             <div><span dangerouslySetInnerHTML={{__html: node.excerpt}} /></div>
-            <div>{node.categories.map(({ n }) => (
-              <div>cat</div>
-            ))}</div>
+            
+            <div><ul>{node.categories.map(cat=>(
+              <div><li>{cat.name}</li></div>
+            ))}</ul></div>
           </div>
         ))}
       </>
@@ -49,6 +52,7 @@ export const pageQuery = graphql`
           excerpt
           slug
           categories { id, name }
+          author { name }
         }
       }
     }
