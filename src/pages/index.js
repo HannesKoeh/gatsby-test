@@ -26,7 +26,7 @@ class Homepage extends Component {
               <h2>{node.title}</h2>
             </Link>
             <div>{node.date}</div>
-            <div>{node.excerpt}</div>
+            <div><span dangerouslySetInnerHTML={{__html: node.excerpt}} /></div>
             <div>{node.categories.map(({ n }) => (
               <div>cat</div>
             ))}</div>

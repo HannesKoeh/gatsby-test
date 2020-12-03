@@ -8,7 +8,8 @@ class Page extends Component {
     return (
       <>
         <h1>{StaticPage.title}</h1>
-        <div>{StaticPage.content}</div>
+        <div>{StaticPage.date}</div>
+        <div><span dangerouslySetInnerHTML={{__html: StaticPage.content}} /></div>
       </>
     )
   }
@@ -21,6 +22,7 @@ export const pageQuery = graphql`
     wordpressPage(id: { eq: $id }) {
       title
       content
+      date
     }
     site {
       id

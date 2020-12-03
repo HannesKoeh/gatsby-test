@@ -9,7 +9,8 @@ class Post extends Component {
     return (
       <>
         <h1>{post.title}</h1>
-        <div>{post.content}</div>
+        <div>{post.date}</div>
+        <div><span dangerouslySetInnerHTML={{__html: post.content}}/></div>
       </>
     )
   }
@@ -26,6 +27,7 @@ export const postQuery = graphql`
   query($id: String!) {
     wordpressPost(id: { eq: $id }) {
       title
+      date
       content
     }
     site {
