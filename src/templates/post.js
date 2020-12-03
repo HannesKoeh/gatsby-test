@@ -8,7 +8,7 @@ class Post extends Component {
 
     return (
       <>
-        <h1>{post.title}</h1>
+        <h1><span dangerouslySetInnerHTML={{__html: post.title}} /></h1>
         <div>{post.date}</div>
         <div><span dangerouslySetInnerHTML={{__html: post.content}}/></div>
       </>
