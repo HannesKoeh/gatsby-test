@@ -21,15 +21,6 @@ module.exports = {
         minimizeDeprecationNotice: true
       },
     },
-    {
-      resolve: `gatsby-theme-blog`,
-      options: {
-        preset: `theme-ui-sketchy-preset`,
-        prismPreset: `oceanic-next`,
-        webfontURL:
-          "https://fonts.googleapis.com/css?family=Architects+Daughter",
-      },
-    },
   ],
 }
 
