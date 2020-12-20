@@ -7,6 +7,8 @@ class Homepage extends Component {
 
     return (
         <>
+        <p> Time : {new Date().toLocaleTimeString()}</p>
+        <p> Date : {new Date().toLocaleDateString()}</p>
         {}
         <h1>Posts</h1>
         {data.allWordpressPost.edges.map(({ node }) => (
