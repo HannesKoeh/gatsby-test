@@ -22,8 +22,32 @@ Post.propTypes = {
 }
 
 export default Post
-
 export const postQuery = graphql`
+query {
+posts (first:1) {
+    edges {
+      node  {
+        id
+        title
+        date
+        content
+        categories {
+          nodes {
+            id
+            name
+          }
+        }
+        author {
+          node {
+            name
+          }
+        }
+      }
+    }
+  }
+}
+`
+export const postQueryold = graphql`
   query($id: String!) {
     wordpressPost(id: { eq: $id }) {
       title
