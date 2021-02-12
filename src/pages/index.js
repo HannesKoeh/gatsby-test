@@ -34,15 +34,15 @@ export default Homepage
 
 export const pageQuery = graphql`
   query {
-    allWordpressPost {
+      posts {
       edges {
         node {
           title
           date
           excerpt
           slug
-          categories { id, name }
-          author { name }
+          categories { nodes { id, name }}
+          author { node { name } }
         }
       }
     }
